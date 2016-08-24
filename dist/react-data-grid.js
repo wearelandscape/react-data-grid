@@ -989,9 +989,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    selectedColumn: React.PropTypes.object,
 	    height: React.PropTypes.number,
 	    tabIndex: React.PropTypes.number,
-	    ref: React.PropTypes.string,
 	    column: React.PropTypes.shape(ExcelColumn).isRequired,
-	    value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.object, React.PropTypes.bool]).isRequired,
+	    value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.object, React.PropTypes.bool]),
 	    isExpanded: React.PropTypes.bool,
 	    isRowSelected: React.PropTypes.bool,
 	    cellMetaData: React.PropTypes.shape(CellMetaDataShape).isRequired,
@@ -2853,8 +2852,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(2);
 	var joinClasses = __webpack_require__(3);
@@ -3023,7 +3020,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return React.createElement(
 	      'div',
-	      _extends({}, this.props, { style: this.getStyle(), className: className }),
+	      { style: this.getStyle(), className: className },
 	      headerRows
 	    );
 	  }
@@ -5428,7 +5425,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  displayName: 'SimpleCellFormatter',
 
 	  propTypes: {
-	    value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.object, React.PropTypes.bool]).isRequired
+	    value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.object, React.PropTypes.bool])
 	  },
 
 	  shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
