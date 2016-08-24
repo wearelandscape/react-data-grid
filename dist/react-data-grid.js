@@ -657,8 +657,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var React = __webpack_require__(1);
 	var joinClasses = __webpack_require__(3);
 	var Cell = __webpack_require__(20);
@@ -843,7 +841,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var cells = this.getCells();
 	    return React.createElement(
 	      'div',
-	      _extends({}, this.props, { className: className, style: style, onDragEnter: this.handleDragEnter }),
+	      { className: className, style: style, onDragEnter: this.handleDragEnter },
 	      React.isValidElement(this.props.row) ? this.props.row : cells
 	    );
 	  }
@@ -1381,10 +1379,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      React.createElement('span', { style: { display: 'none' } })
 	    ) : null;
 	    var events = this.getEvents();
+	    var restProps = _.omit(this.props, Object.keys(this.props));
 
 	    return React.createElement(
 	      'div',
-	      _extends({}, this.props, { className: className, style: style }, events),
+	      _extends({ className: className, style: style }, events),
 	      cellContent,
 	      dragHandle
 	    );
@@ -2668,8 +2667,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var React = __webpack_require__(1);
 	var PropTypes = React.PropTypes;
 	var Header = __webpack_require__(44);
@@ -2750,7 +2747,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return React.createElement(
 	      'div',
-	      _extends({}, this.props, { style: this.getStyle(), className: 'react-grid-Grid' }),
+	      { style: this.getStyle(), className: 'react-grid-Grid' },
 	      React.createElement(Header, {
 	        ref: 'header',
 	        columnMetrics: this.props.columnMetrics,
@@ -3320,7 +3317,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var cells = this.getCells();
 	    return React.createElement(
 	      'div',
-	      _extends({}, this.props, { className: 'react-grid-HeaderRow', onScroll: this.props.onScroll }),
+	      { className: 'react-grid-HeaderRow', onScroll: this.props.onScroll },
 	      React.createElement(
 	        'div',
 	        { style: cellsStyle },
