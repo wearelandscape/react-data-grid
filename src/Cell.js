@@ -461,9 +461,10 @@ const Cell = React.createClass({
 
     let dragHandle = (!this.isActive() && ColumnUtils.canEdit(this.props.column, this.props.rowData, this.props.cellMetaData.enableCellSelect)) ? <div className="drag-handle" draggable="true" onDoubleClick={this.onDragHandleDoubleClick}><span style={{ display: 'none' }}></span></div> : null;
     let events = this.getEvents();
+    let restProps = _.omit(this.props, Object.keys(this.props))
 
     return (
-      <div {...this.props} className={className} style={style}   {...events}>
+      <div className={className} style={style}   {...events}>
         {cellContent}
         {dragHandle}
       </div>
